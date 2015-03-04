@@ -24,4 +24,3 @@ That being said, I would appreciate it if you could maintain a link back to
 Dotbot (or this repository) to help other people discover Dotbot.
 
 [dotbot]: https://github.com/anishathalye/dotbot
-[fork]: https://github.com/anishathalye/dotfiles_template/fork
