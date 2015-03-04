@@ -12,7 +12,7 @@ Plug 'tpope/vim-sensible'                        " sensible defaults
 Plug 'tomtom/tcomment_vim'                       " makes commenting easy
 Plug 'vim-scripts/Solarized'                     " solarized color scheme
 Plug 'godlygeek/tabular'                         " Automatic indent completion
-Plug 'plasticboy/vim-markdown', { 'for': 'mkd' } " vim markdown syntax highlighting!
+Plug 'plasticboy/vim-markdown' " vim markdown syntax highlighting!
 Plug 'kien/ctrlp.vim'                            " Fuzzy path finder
 Plug 'scrooloose/nerdtree'                       " Folder management
 Plug 'Lokaltog/vim-easymotion'                   " Fast text movement
@@ -58,7 +58,7 @@ set ignorecase
 set smartcase
 
 " Disable auto-commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "-----------------------------------------------------------------------------
 " PLUGIN SPECIFIC SETTINGS
