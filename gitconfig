@@ -1,0 +1,9 @@
+[core]
+	editor = vim
+[user]
+	name = "Joe Choi"
+	email = joehanchoi@gmail.com
+[merge]
+	tool = vimdiff
+[credential]
+	helper = osxkeychain
