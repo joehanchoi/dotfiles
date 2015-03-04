@@ -8,31 +8,32 @@ call plug#begin('~/.vim/plugged')
 "-----------------------------------------------------------------------------
 " PLUGINS
 "-----------------------------------------------------------------------------
-Plug 'tpope/vim-sensible'                        " sensible defaults
-Plug 'tomtom/tcomment_vim'                       " makes commenting easy
-Plug 'vim-scripts/Solarized'                     " solarized color scheme
-Plug 'godlygeek/tabular'                         " Automatic indent completion
-Plug 'plasticboy/vim-markdown' " vim markdown syntax highlighting!
-Plug 'kien/ctrlp.vim'                            " Fuzzy path finder
-Plug 'scrooloose/nerdtree'                       " Folder management
-Plug 'Lokaltog/vim-easymotion'                   " Fast text movement
-Plug 'bling/vim-airline'                         " Airline status bar
-Plug 'terryma/vim-multiple-cursors'              " Multiple cursors
-Plug 'myusuf3/numbers.vim'                       " Adds smart number lines
-Plug 'gregsexton/MatchTag'                       " Match tags with highlighting
-Plug 'Shougo/neocomplete.vim'                    " Autocompletion
-Plug 'sjl/gundo.vim'                             " Undo tree pane
-Plug 'tpope/vim-vinegar'                         " Avoid project drawer plugin
-Plug 'tpope/vim-repeat'                          " Enable repeating plugin maps with .
-Plug 'svermeulen/vim-easyclip'                   " Simplified clipboard functionality
-Plug 'Shougo/neosnippet'                         " Text expansion
-Plug 'christoomey/vim-tmux-navigator'            " Vim and tmux seamless navigation
-Plug 'davidhalter/jedi-vim'                      " Python code completion
-Plug 'scrooloose/syntastic'                      " Syntax checker
-Plug 'majutsushi/tagbar'                         " Tag navigation
-Plug 'rking/ag.vim'                              " Keyword searcher
-Plug 'tpope/vim-unimpaired'                      " Paired mapping
-Plug 'Raimondi/delimitMate'                      " Add delimiters automatically
+Plug 'tpope/vim-sensible'             " Sensible defaults
+Plug 'tomtom/tcomment_vim'            " Makes commenting easy
+Plug 'vim-scripts/Solarized'          " Solarized color scheme
+Plug 'godlygeek/tabular'              " Automatic indent completion
+Plug 'plasticboy/vim-markdown'        " Vim markdown syntax highlighting
+Plug 'kien/ctrlp.vim'                 " Fuzzy path finder
+Plug 'scrooloose/nerdtree'            " Folder management
+Plug 'Lokaltog/vim-easymotion'        " Fast text movement
+Plug 'bling/vim-airline'              " Airline status bar
+Plug 'terryma/vim-multiple-cursors'   " Multiple cursors
+Plug 'myusuf3/numbers.vim'            " Adds smart number lines
+Plug 'gregsexton/MatchTag'            " Match tags with highlighting
+Plug 'Shougo/neocomplete.vim'         " Autocompletion
+Plug 'sjl/gundo.vim'                  " Undo tree pane
+Plug 'tpope/vim-vinegar'              " Avoid project drawer plugin
+Plug 'tpope/vim-repeat'               " Enable repeating plugin maps with .
+Plug 'svermeulen/vim-easyclip'        " Simplified clipboard functionality
+Plug 'Shougo/neosnippet'              " Text expansion
+Plug 'christoomey/vim-tmux-navigator' " Vim and tmux seamless navigation
+Plug 'davidhalter/jedi-vim'           " Python code completion
+Plug 'scrooloose/syntastic'           " Syntax checker
+Plug 'majutsushi/tagbar'              " Tag navigation
+Plug 'rking/ag.vim'                   " Keyword searcher
+Plug 'tpope/vim-unimpaired'           " Paired mapping
+Plug 'Raimondi/delimitMate'           " Add delimiters automatically
+Plug 'tpope/vim-surround'             " Mappings to change surroundings
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 call plug#end()
