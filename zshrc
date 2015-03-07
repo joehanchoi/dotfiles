@@ -81,3 +81,4 @@ setopt no_beep
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tmuxb="tmux attach -t base || tmux new -s base"
