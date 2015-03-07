@@ -74,7 +74,7 @@ nmap s <Plug>(easymotion-s2)
 autocmd FileType python setlocal completeopt-=preview
 " Start neocomplete at startup, disable autocomplete
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#disable_auto_complete = 1
+" let g:neocomplete#disable_auto_complete = 1
 " Smart close popup when backspacing
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
