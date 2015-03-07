@@ -105,9 +105,9 @@ map <Leader>gun :GundoToggle<CR>
 
 "--- NEOSNIPPET --------------------------------------------------------------
 " Command+K for expansion
-imap <C-c> <Plug>(neosnippet_expand_or_jump)
-smap <C-c> <Plug>(neosnippet_expand_or_jump)
-xmap <C-c> <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 " Custom snippet directory
 let g:neosnippet#snippets_directory='~/.vim/snippets/'
 
@@ -151,8 +151,8 @@ let g:tagbar_autofocus = 1
 let delimitMate_excluded_ft = "vim"
 
 "--- JEDI-VIM ----------------------------------------------------------------
-" Disable function popup
-let g:jedi#show_call_signatures = "1"
+" Move function popup
+let g:jedi#show_call_signatures = "2"
 
 "-----------------------------------------------------------------------------
 " USER INTERFACE
@@ -166,6 +166,7 @@ set background=dark             " required for solarized dark
 colorscheme solarized           " set color scheme to solarized dark
 set nofoldenable                " Disable folding
 set nowrap                      " Disable line wrap
+imap jk <Esc>
 
 " Set columncolor bar
 autocmd FileType cpp,c,cxx,h,hpp,python,sh,vim,mkd  setlocal cc=80
