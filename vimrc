@@ -134,7 +134,7 @@ nnoremap <leader>tag :TagbarToggle<CR>
 " Add support for markdown files in tagbar.
 let g:tagbar_type_mkd = {
     \ 'ctagstype': 'mkd',
-    \ 'ctagsbin' : '~/.vim/plugged/markdown2ctags/markdown2ctags.py',
+    \ 'ctagsbin' : '~/.vim/markdown2ctags/markdown2ctags.py',
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
 	\ 's:sections',
