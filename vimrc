@@ -1,9 +1,9 @@
 "-----------------------------------------------------------------------------
 " PRELIMINARY SETUP
 "-----------------------------------------------------------------------------
-set shell=/bin/bash " Use bash shell
-set nocompatible    " Use Vim settings, rather than vi
-call plug#begin('~/.vim/plugged')
+set shell=/bin/bash               " Use bash shell
+set nocompatible                  " Use Vim settings, rather than vi
+call plug#begin('~/.vim/plugged') " Use Vim-Plug
 
 "-----------------------------------------------------------------------------
 " PLUGINS
@@ -34,11 +34,8 @@ Plug 'rking/ag.vim'                   " Keyword searcher
 Plug 'tpope/vim-unimpaired'           " Paired mapping
 Plug 'Raimondi/delimitMate'           " Add delimiters automatically
 Plug 'tpope/vim-surround'             " Mappings to change surroundings
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
 call plug#end()
-" call vundle#end()
-" filetype plugin indent on
 
 "-----------------------------------------------------------------------------
 " MAPPINGS
