@@ -25,7 +25,6 @@ Plug 'sjl/gundo.vim'                  " Undo tree pane
 Plug 'tpope/vim-vinegar'              " Avoid project drawer plugin
 Plug 'tpope/vim-repeat'               " Enable repeating plugin maps with .
 Plug 'svermeulen/vim-easyclip'        " Simplified clipboard functionality
-Plug 'Shougo/neosnippet'              " Text expansion
 Plug 'christoomey/vim-tmux-navigator' " Vim and tmux seamless navigation
 Plug 'davidhalter/jedi-vim'           " Python code completion
 Plug 'scrooloose/syntastic'           " Syntax checker
@@ -34,6 +33,7 @@ Plug 'rking/ag.vim'                   " Keyword searcher
 Plug 'tpope/vim-unimpaired'           " Paired mapping
 Plug 'Raimondi/delimitMate'           " Add delimiters automatically
 Plug 'tpope/vim-surround'             " Mappings to change surroundings
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -74,7 +74,7 @@ nmap s <Plug>(easymotion-s2)
 autocmd FileType python setlocal completeopt-=preview
 " Start neocomplete at startup, disable autocomplete
 let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#disable_auto_complete = 1
+let g:neocomplete#disable_auto_complete = 0
 " Smart close popup when backspacing
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
@@ -154,6 +154,12 @@ let delimitMate_excluded_ft = "vim"
 " Move function popup
 let g:jedi#show_call_signatures = "2"
 
+"--- Ultisnips ---------------------------------------------------------------
+let g:UltiSnipsExpandTrigger="<c-k>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+
+let g:UltiSnipsSnippetsDir = "~/.vim/snippets"
 "-----------------------------------------------------------------------------
 " USER INTERFACE
 "-----------------------------------------------------------------------------
@@ -166,6 +172,9 @@ set background=dark             " required for solarized dark
 colorscheme solarized           " set color scheme to solarized dark
 set nofoldenable                " Disable folding
 set nowrap                      " Disable line wrap
+
+inoremap <C-n> <Nop>
+inoremap <C-p> <Nop>
 
 " Set columncolor bar
 autocmd FileType cpp,c,cxx,h,hpp,python,sh,vim,mkd  setlocal cc=80
