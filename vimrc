@@ -34,6 +34,7 @@ Plug 'tpope/vim-unimpaired'           " Paired mapping
 Plug 'Raimondi/delimitMate'           " Add delimiters automatically
 Plug 'tpope/vim-surround'             " Mappings to change surroundings
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -103,14 +104,6 @@ let g:neocomplete#force_omni_input_patterns.python =
 " Toggle Gundo with <Leader>gun
 map <Leader>gun :GundoToggle<CR>
 
-"--- NEOSNIPPET --------------------------------------------------------------
-" Command+K for expansion
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-" Custom snippet directory
-let g:neosnippet#snippets_directory='~/.vim/snippets/'
-
 "--- SYNTASTIC ---------------------------------------------------------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -159,7 +152,7 @@ let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
-let g:UltiSnipsSnippetsDir = "~/.vim/snippets"
+let g:UltiSnipsSnippetsDir = "~/.vim/ultisnippets"
 "-----------------------------------------------------------------------------
 " USER INTERFACE
 "-----------------------------------------------------------------------------
