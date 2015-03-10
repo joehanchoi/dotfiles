@@ -14,7 +14,7 @@ Plug 'vim-scripts/Solarized'          " Solarized color scheme
 Plug 'godlygeek/tabular'              " Automatic indent completion
 Plug 'plasticboy/vim-markdown'        " Vim markdown syntax highlighting
 Plug 'kien/ctrlp.vim'                 " Fuzzy path finder
-Plug 'scrooloose/nerdtree'            " Folder management
+Plug 'joehanchoi/nerdtree'            " Folder management
 Plug 'Lokaltog/vim-easymotion'        " Fast text movement
 Plug 'bling/vim-airline'              " Airline status bar
 Plug 'terryma/vim-multiple-cursors'   " Multiple cursors
