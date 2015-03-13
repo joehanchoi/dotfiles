@@ -45,11 +45,11 @@ ZSH_THEME="custom-theme"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux zsh-syntax-highlighting autojump)
+plugins=(git tmux zsh-syntax-highlighting autojump virtualenv)
 
 # User configuration
 
-export PATH=":/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Library/Frameworks/Python.framework/Versions/3.4/bin"
+export PATH=":/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
