@@ -15,7 +15,6 @@ Plug 'godlygeek/tabular'              " Automatic indent completion
 Plug 'plasticboy/vim-markdown'        " Vim markdown syntax highlighting
 Plug 'kien/ctrlp.vim'                 " Fuzzy path finder
 Plug 'joehanchoi/nerdtree'            " Folder management
-Plug 'Lokaltog/vim-easymotion'        " Fast text movement
 Plug 'bling/vim-airline'              " Airline status bar
 Plug 'terryma/vim-multiple-cursors'   " Multiple cursors
 Plug 'myusuf3/numbers.vim'            " Adds smart number lines
@@ -33,8 +32,9 @@ Plug 'rking/ag.vim'                   " Keyword searcher
 Plug 'tpope/vim-unimpaired'           " Paired mapping
 Plug 'Raimondi/delimitMate'           " Add delimiters automatically
 Plug 'tpope/vim-surround'             " Mappings to change surroundings
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'               " Snippet engine
+Plug 'honza/vim-snippets'             " Default snippets for ultisnips
+Plug 'justinmk/vim-sneak'             " Fast text movement
 
 call plug#end()
 
@@ -62,14 +62,6 @@ set smartcase
 "-----------------------------------------------------------------------------
 " PLUGIN SPECIFIC SETTINGS
 "-----------------------------------------------------------------------------
-"--- EASY MOTION -------------------------------------------------------------
-" Disable default key maps
-let g:EasyMotion_do_mapping = 0
-" Case insensitive seach
-let g:EasyMotion_smartcase = 1
-" Bi-Directional Search
-nmap s <Plug>(easymotion-s2)
-
 "--- NEOCOMPLETE -------------------------------------------------------------
 " Hide popupmenu for python information
 autocmd FileType python setlocal completeopt-=preview
@@ -144,14 +136,15 @@ let delimitMate_excluded_ft = "vim"
 " Move function popup
 let g:jedi#show_call_signatures = "2"
 
-"--- Ultisnips ---------------------------------------------------------------
+"--- ULTISNIPS ---------------------------------------------------------------
 let g:UltiSnipsExpandTrigger="<c-k>"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 let g:UltiSnipsSnippetsDir = "~/.vim/ultisnippets"
 
-"--- Multiple Cursors --------------------------------------------------------
+"--- MULTIPLE CURSORS --------------------------------------------------------
+" Compatability with neocomplete
 " Called once right before you start selecting multiple cursors
 function! Multiple_cursors_before()
   if exists(':NeoCompleteLock')==2
@@ -166,6 +159,27 @@ function! Multiple_cursors_after()
   endif
 endfunction
 
+"--- SNEAK -------------------------------------------------------------------
+" Enable streak
+let g:sneak#streak = 1
+
+" Enable keys
+nmap s <Plug>Sneak_s
+nmap S <Plug>Sneak_S
+xmap s <Plug>Sneak_s
+xmap S <Plug>Sneak_S
+
+" Enable case-insensitive search
+let g:sneak#use_ic_scs = 1
+
+" Colors
+augroup SneakPluginColors
+   autocmd!
+   autocmd ColorScheme * hi SneakPluginTarget ctermfg=235 ctermbg=136
+   autocmd ColorScheme * hi SneakStreakTarget ctermfg=235 ctermbg=136
+   autocmd ColorScheme * hi SneakStreakMask ctermfg=136 ctermbg=136
+augroup END
+
 "-----------------------------------------------------------------------------
 " USER INTERFACE
 "-----------------------------------------------------------------------------
@@ -178,9 +192,6 @@ set background=dark             " required for solarized dark
 colorscheme solarized           " set color scheme to solarized dark
 set nofoldenable                " Disable folding
 set nowrap                      " Disable line wrap
-
-inoremap <C-n> <Nop>
-inoremap <C-p> <Nop>
 
 " Set columncolor bar
 autocmd FileType cpp,c,cxx,h,hpp,python,sh,vim,mkd  setlocal cc=80
