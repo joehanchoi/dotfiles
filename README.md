@@ -8,9 +8,11 @@ Powered by [Dotbot][dotbot].
 * [Oh-My-Zsh][zsh]: `curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh`
 * [Tmux][tmux]: `brew install tmux`
 * [VIM with Lua][vim]: `brew install vim --with-lua`
+* [Vim-Plug](plug): `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 
 ## Installation
-Run `sh install`.
+Run `sh install`. Open vim and `:PlugInstall` to install plugins.
 
 [dotbot]: https://github.com/anishathalye/dotbot
 [homebrew]: http://brew.sh/
@@ -18,3 +20,4 @@ Run `sh install`.
 [zsh]: https://github.com/robbyrussell/oh-my-zsh
 [tmux]: http://tmux.sourceforge.net/
 [vim]: http://www.vim.org/
+[plug]: https://github.com/junegunn/vim-plug
