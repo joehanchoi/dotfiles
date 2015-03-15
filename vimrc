@@ -35,7 +35,7 @@ Plug 'tpope/vim-surround'             " Mappings to change surroundings
 Plug 'SirVer/ultisnips'               " Snippet engine
 Plug 'honza/vim-snippets'             " Default snippets for ultisnips
 Plug 'justinmk/vim-sneak'             " Fast text movement
-
+Plug 'lepture/vim-jinja'
 call plug#end()
 
 "-----------------------------------------------------------------------------
