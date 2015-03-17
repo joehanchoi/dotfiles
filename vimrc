@@ -30,12 +30,13 @@ Plug 'scrooloose/syntastic'           " Syntax checker
 Plug 'majutsushi/tagbar'              " Tag navigation
 Plug 'rking/ag.vim'                   " Keyword searcher
 Plug 'tpope/vim-unimpaired'           " Paired mapping
-Plug 'Raimondi/delimitMate'           " Add delimiters automatically
 Plug 'tpope/vim-surround'             " Mappings to change surroundings
-Plug 'SirVer/ultisnips'               " Snippet engine
 Plug 'honza/vim-snippets'             " Default snippets for ultisnips
 Plug 'justinmk/vim-sneak'             " Fast text movement
-Plug 'lepture/vim-jinja'
+Plug 'lepture/vim-jinja'              " Jinja syntax highlighting
+Plug 'jiangmiao/auto-pairs'           " Auto inserting delimiters
+Plug 'Yggdroot/indentLine'
+Plug 'Shougo/neosnippet.vim'
 call plug#end()
 
 "-----------------------------------------------------------------------------
@@ -76,9 +77,6 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
 endfunction
-" Tab to cycle through, shift tab for backwards
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " Python Completions for neocomplete
 autocmd FileType python setlocal omnifunc=jedi#completions
 let g:jedi#completions_enabled = 0
@@ -128,20 +126,9 @@ let g:tagbar_type_mkd = {
 " Focus Tagbar automatically when called
 let g:tagbar_autofocus = 1
 
-"--- DELIMITMATE -------------------------------------------------------------
-" Disable in certain filetypes
-let delimitMate_excluded_ft = "vim"
-
 "--- JEDI-VIM ----------------------------------------------------------------
 " Move function popup
 let g:jedi#show_call_signatures = "2"
-
-"--- ULTISNIPS ---------------------------------------------------------------
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-
-let g:UltiSnipsSnippetsDir = "~/.vim/ultisnippets"
 
 "--- MULTIPLE CURSORS --------------------------------------------------------
 " Compatability with neocomplete
@@ -179,6 +166,27 @@ augroup SneakPluginColors
    autocmd ColorScheme * hi SneakStreakTarget ctermfg=235 ctermbg=136
    autocmd ColorScheme * hi SneakStreakMask ctermfg=136 ctermbg=136
 augroup END
+
+"--- NEOSNIPPET --------------------------------------------------------------
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 "-----------------------------------------------------------------------------
 " USER INTERFACE
