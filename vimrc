@@ -25,7 +25,6 @@ Plug 'tpope/vim-vinegar'              " Avoid project drawer plugin
 Plug 'tpope/vim-repeat'               " Enable repeating plugin maps with .
 Plug 'svermeulen/vim-easyclip'        " Simplified clipboard functionality
 Plug 'christoomey/vim-tmux-navigator' " Vim and tmux seamless navigation
-Plug 'davidhalter/jedi-vim'           " Python code completion
 Plug 'scrooloose/syntastic'           " Syntax checker
 Plug 'majutsushi/tagbar'              " Tag navigation
 Plug 'rking/ag.vim'                   " Keyword searcher
@@ -33,7 +32,7 @@ Plug 'tpope/vim-unimpaired'           " Paired mapping
 Plug 'tpope/vim-surround'             " Mappings to change surroundings
 Plug 'honza/vim-snippets'             " Default snippets for ultisnips
 Plug 'justinmk/vim-sneak'             " Fast text movement
-Plug 'lepture/vim-jinja'              " Jinja syntax highlighting
+Plug 'joehanchoi/vim-jinja'              " Jinja syntax highlighting
 Plug 'jiangmiao/auto-pairs'           " Auto inserting delimiters
 Plug 'Yggdroot/indentLine'
 Plug 'Shougo/neosnippet.vim'
@@ -65,7 +64,7 @@ set smartcase
 "-----------------------------------------------------------------------------
 "--- NEOCOMPLETE -------------------------------------------------------------
 " Hide popupmenu for python information
-autocmd FileType python setlocal completeopt-=preview
+" autocmd FileType python setlocal completeopt-=preview
 " Start neocomplete at startup, disable autocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#disable_auto_complete = 0
@@ -78,14 +77,14 @@ function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
 endfunction
 " Python Completions for neocomplete
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.python =
-\ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+" autocmd FileType python setlocal omnifunc=jedi#completions
+" let g:jedi#completions_enabled = 0
+" let g:jedi#auto_vim_configuration = 0
+" if !exists('g:neocomplete#force_omni_input_patterns')
+"   let g:neocomplete#force_omni_input_patterns = {}
+" endif
+" let g:neocomplete#force_omni_input_patterns.python =
+" \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 "--- GUNDO -------------------------------------------------------------------
 " Toggle Gundo with <Leader>gun
@@ -125,10 +124,6 @@ let g:tagbar_type_mkd = {
 \ }
 " Focus Tagbar automatically when called
 let g:tagbar_autofocus = 1
-
-"--- JEDI-VIM ----------------------------------------------------------------
-" Move function popup
-let g:jedi#show_call_signatures = "2"
 
 "--- MULTIPLE CURSORS --------------------------------------------------------
 " Compatability with neocomplete
@@ -188,6 +183,7 @@ endif
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
+let g:indentLine_color_term = 240
 "-----------------------------------------------------------------------------
 " USER INTERFACE
 "-----------------------------------------------------------------------------
@@ -202,7 +198,7 @@ set nofoldenable                " Disable folding
 set nowrap                      " Disable line wrap
 
 " Set columncolor bar
-autocmd FileType cpp,c,cxx,h,hpp,python,sh,vim,mkd  setlocal cc=80
+autocmd FileType cpp,c,cxx,h,hpp,python,sh,vim,mkd,jinja,html  setlocal cc=80
 
 "--- INTEGRATION -------------------------------------------------------------
 " Change cursor when in Insert mode
