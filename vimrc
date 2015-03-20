@@ -33,9 +33,12 @@ Plug 'tpope/vim-surround'             " Mappings to change surroundings
 Plug 'honza/vim-snippets'             " Default snippets for ultisnips
 Plug 'justinmk/vim-sneak'             " Fast text movement
 Plug 'joehanchoi/vim-jinja'              " Jinja syntax highlighting
-Plug 'jiangmiao/auto-pairs'           " Auto inserting delimiters
 Plug 'Yggdroot/indentLine'
 Plug 'Shougo/neosnippet.vim'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'Raimondi/delimitMate'
+Plug 'hdima/python-syntax'
+
 call plug#end()
 
 "-----------------------------------------------------------------------------
@@ -183,7 +186,16 @@ endif
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
-let g:indentLine_color_term = 240
+
+"--- INDENT-LINE -------------------------------------------------------------
+let g:indentLine_color_term = 236
+
+"--- PYTHON-SYNTAX -----------------------------------------------------------
+let python_highlight_space_errors = 0
+let python_highlight_indent_errors = 0
+let python_print_as_function = 0
+let python_highlight_all = 1
+
 "-----------------------------------------------------------------------------
 " USER INTERFACE
 "-----------------------------------------------------------------------------
