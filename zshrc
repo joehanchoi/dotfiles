@@ -91,3 +91,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 # --- ALIASES ---
 alias tmuxb="tmux attach -t base || tmux new -s base"
 alias py3="python3"
+alias -g seedbox="joehanchoi@epimetheus.feralhosting.com"
+alias tmuxn="tmux new -s"
+alias tmuxa="tmux attach -t"
+alias tmuxl="tmux list-sessions"
