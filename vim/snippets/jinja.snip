@@ -1,1 +1,20 @@
 include html.snip
+
+snippet block
+options word
+        {% block ${1} %}
+
+snippet extends
+options word
+        {% extends "${1}" %}
+
+snippet endblock
+abbr endblock
+options word
+        {% endblock %}
+
+snippet variable
+abbr {{ }}
+alias {{ }}
+options word
+        {{ ${1} }}

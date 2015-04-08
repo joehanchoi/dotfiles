@@ -30,7 +30,6 @@ Plug 'majutsushi/tagbar'              " Tag navigation
 Plug 'rking/ag.vim'                   " Keyword searcher
 Plug 'tpope/vim-unimpaired'           " Paired mapping
 Plug 'tpope/vim-surround'             " Mappings to change surroundings
-Plug 'honza/vim-snippets'             " Default snippets for ultisnips
 Plug 'justinmk/vim-sneak'             " Fast text movement
 Plug 'joehanchoi/vim-jinja'              " Jinja syntax highlighting
 Plug 'Yggdroot/indentLine'
@@ -66,8 +65,6 @@ set smartcase
 " PLUGIN SPECIFIC SETTINGS
 "-----------------------------------------------------------------------------
 "--- NEOCOMPLETE -------------------------------------------------------------
-" Hide popupmenu for python information
-" autocmd FileType python setlocal completeopt-=preview
 " Start neocomplete at startup, disable autocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#disable_auto_complete = 0
@@ -79,15 +76,8 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
 endfunction
-" Python Completions for neocomplete
-" autocmd FileType python setlocal omnifunc=jedi#completions
-" let g:jedi#completions_enabled = 0
-" let g:jedi#auto_vim_configuration = 0
-" if !exists('g:neocomplete#force_omni_input_patterns')
-"   let g:neocomplete#force_omni_input_patterns = {}
-" endif
-" let g:neocomplete#force_omni_input_patterns.python =
-" \ '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+" Disable preview window
+set completeopt-=preview
 
 "--- GUNDO -------------------------------------------------------------------
 " Toggle Gundo with <Leader>gun
