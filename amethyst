@@ -95,8 +95,8 @@
         "key": "3"
     },
     "focus-screen-4": {
-        "mod": "mod1",
-        "key": ""
+        "mod": "mod2",
+        "key": "4"
     },
     "throw-screen-1": {
         "mod": "mod1",
@@ -111,8 +111,8 @@
         "key": "3"
     },
     "throw-screen-4": {
-        "mod": "mod2",
-        "key": "q"
+        "mod": "mod1",
+        "key": "4"
     },
     "shrink-main": {
         "mod": "mod1",
@@ -212,7 +212,7 @@
     	"com.tapbots.TweetbotMac",
 	"com.adiumX.adiumX",
 	"com.todoist.mac.Todoist",
-	"com.apple.iChat"
+	"com.apple.iChat",
     ],
     "float-small-windows": true,
     "mouse-follows-focus": false,
