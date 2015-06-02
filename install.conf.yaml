@@ -7,4 +7,5 @@
         ~/.vim: vim/
         ~/.vimrc: vimrc
         ~/.zshrc: zshrc
+        ~/.hammerspoon: hammerspoon/
 - shell: []

@@ -198,9 +198,10 @@ set background=dark             " required for solarized dark
 colorscheme solarized           " set color scheme to solarized dark
 set nofoldenable                " Disable folding
 set nowrap                      " Disable line wrap
+set noswapfile                  " No backups
 
 " Set columncolor bar
-autocmd FileType cpp,c,cxx,h,hpp,python,sh,vim,mkd,jinja,html  setlocal cc=80
+autocmd FileType cpp,c,cxx,h,hpp,python,sh,vim,mkd,jinja,html,lua setlocal cc=80
 
 "--- INTEGRATION -------------------------------------------------------------
 " Change cursor when in Insert mode

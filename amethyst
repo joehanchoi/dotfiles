@@ -213,6 +213,7 @@
 	"com.adiumX.adiumX",
 	"com.todoist.mac.Todoist",
 	"com.apple.iChat",
+    	"cc.buechele.Goofy"
     ],
     "float-small-windows": true,
     "mouse-follows-focus": false,
