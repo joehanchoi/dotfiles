@@ -8,8 +8,9 @@ Powered by [Dotbot][dotbot].
 * [Oh-My-Zsh][zsh]: `curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh`
 * [Tmux][tmux]: `brew install tmux`
 * [VIM with Lua][vim]: `brew install vim --with-lua`
-* [Vim-Plug](plug): `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+* [Vim-Plug][plug]: `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
+* [Hammerspoon][hs]
 
 ## Installation
 Run `sh install`. Open vim and `:PlugInstall` to install plugins.
@@ -21,3 +22,4 @@ Run `sh install`. Open vim and `:PlugInstall` to install plugins.
 [tmux]: http://tmux.sourceforge.net/
 [vim]: http://www.vim.org/
 [plug]: https://github.com/junegunn/vim-plug
+[hs]: https://github.com/Hammerspoon/hammerspoon/releases
