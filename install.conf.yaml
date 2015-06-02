@@ -1,6 +1,5 @@
 - clean: ['~']
 - link:
-        ~/.amethyst: amethyst
         ~/.gitconfig: gitconfig
         ~/.oh-my-zsh/custom/custom-theme.zsh-theme: custom-theme.zsh-theme
         ~/.tmux.conf: tmux.conf
