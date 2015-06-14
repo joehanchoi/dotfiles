@@ -12,7 +12,7 @@ Plug 'tpope/vim-sensible'             " Sensible defaults
 Plug 'tomtom/tcomment_vim'            " Makes commenting easy
 Plug 'vim-scripts/Solarized'          " Solarized color scheme
 Plug 'godlygeek/tabular'              " Automatic indent completion
-Plug 'plasticboy/vim-markdown'        " Vim markdown syntax highlighting
+" Plug 'plasticboy/vim-markdown'        " Vim markdown syntax highlighting
 Plug 'kien/ctrlp.vim'                 " Fuzzy path finder
 Plug 'joehanchoi/nerdtree'            " Folder management
 Plug 'bling/vim-airline'              " Airline status bar
@@ -37,6 +37,8 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'Raimondi/delimitMate'
 Plug 'hdima/python-syntax'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'joehanchoi/vim-markdown'
 
 call plug#end()
 

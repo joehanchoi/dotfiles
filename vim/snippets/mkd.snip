@@ -50,10 +50,10 @@ abbr _emphasis_
 options word
     _${1}_${2}
 
-snippet strong1
+snippet bold
 abbr **strong**
 options word
-    **${1}**${2}
+    **${1}**
 
 snippet strong2
 abbr __strong__
@@ -70,3 +70,8 @@ abbr code block
 options head
     \`\`\`${1:#:language}
     ${2:#:code }
+
+snippet math
+abbr `math`
+options word
+    $${1}$
