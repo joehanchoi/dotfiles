@@ -18,6 +18,9 @@ local screenwatcher = hs.screen.watcher.new(function()
 end)
 screenwatcher:start()
 
+-- Modified hinting extension for when the window manager is triggered
+-- local hintsb = require 'hintsb'
+
 -- ----------------------------------------------------------------------------
 -- Keyboard modifiers
 -- ----------------------------------------------------------------------------
@@ -121,6 +124,7 @@ function disableModal()
     end
     hs.alert.closeAll()
     hs.hints.closeHints()
+    k:exit()
 end
 
 function enableModal()
@@ -136,6 +140,7 @@ hs.hotkey.bind( modHyper, 'space', function()
         disableModal()
     else
         enableModal()
+        hs.hints.windowHints(nil, send_mouse_center)
     end
 end )
 
@@ -167,72 +172,76 @@ function toggle_window_maximized()
     end
 end
 
+-- Send mouse to center of window
+function send_mouse_center()
+    hs.eventtap.keyStroke({"ctrl", "alt"}, "n")
+end
+
 -- Notification for changes
 hs.notify.new( {title='Hammerspoon', subTitle='Configuration loaded'} ):send()
 
 -- Hinting Setup
-hs.hints.hintChars = {"A","B","D","E","F","G","I","N","P","Q",
-                      "R","S","T","U","V","W","X","Y","Z"}
+hs.hints.hintChars = {"Y", "U", "I", "O", "P", ";", "N", "M", "/",
+                      "6", "7", "8", "9", "0"}
 hs.hints.showTitleThresh = 99
-hs.hints.fontSize = 14
+hs.hints.fontSize = 12
 
 -- ----------------------------------------------------------------------------
 -- Modal Keys
 -- ----------------------------------------------------------------------------
-modalBind(modNone, 'h', function() push(0,0,0.5,1) end)
-modalBind(modNone, 'j', function() push(0.5,0.5,0.5,0.5) end)
-modalBind(modNone, 'k', function() push(0.5,0,0.5,0.5) end)
-modalBind(modNone, 'l', function() push(0.5,0,0.5,1) end)
+modalBind(modNone, 'h', function() push(0,0,0.5,1); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, 'j', function() push(0.5,0.5,0.5,0.5); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, 'k', function() push(0.5,0,0.5,0.5); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, 'l', function() push(0.5,0,0.5,1); hs.hints.windowHints(nil, send_mouse_center) end)
 
 -- Center Screen
-modalBind(modNone, 'c', function() push(0.1,0,0.8,1) end)
-modalBind(modNone, 'b', function() push(0.25,0.1,.5,.8) end)
-modalBind(modNone, '1', function() moveToMonitor(4) end)
-modalBind(modNone, '2', function() moveToMonitor(1) end)
-modalBind(modNone, '3', function() moveToMonitor(2) end)
+modalBind(modNone, 'c', function() push(0.1,0,0.8,1); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, 'b', function() push(0.25,0.1,.5,.8); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, '1', function() moveToMonitor(4); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
+modalBind(modNone, '2', function() moveToMonitor(1); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
+modalBind(modNone, '3', function() moveToMonitor(2); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
 
 -- Toggle Full Screen
-modalBind(modNone, 'M',  toggle_window_maximized)
-
--- App Switcher (Hints)
-modalBind(modNone, 'O', hs.hints.windowHints)
+modalBind(modNone, 'F',  toggle_window_maximized)
 
 -- ----------------------------------------------------------------------------
 -- Non-Modal Keys
 -- ----------------------------------------------------------------------------
 
 -- Window Focus Directional Switch
-hs.hotkey.bind(modHyper, 'k', function()
-    if hs.window.focusedWindow() then
-        hs.window.focusedWindow():focusWindowNorth()
-    else
-        hs.alert.show("No active window")
-    end
- end)
-
-hs.hotkey.bind(modHyper, 'j', function()
-    if hs.window.focusedWindow() then
-        hs.window.focusedWindow():focusWindowSouth()
-    else
-        hs.alert.show("No active window")
-    end
- end)
-
-hs.hotkey.bind(modHyper, 'l', function()
-    if hs.window.focusedWindow() then
-        hs.window.focusedWindow():focusWindowEast()
-    else
-        hs.alert.show("No active window")
-    end
-end)
-
-hs.hotkey.bind(modHyper, 'h', function()
-    if hs.window.focusedWindow() then
-        hs.window.focusedWindow():focusWindowWest()
-    else
-        hs.alert.show("No active window")
-    end
-end)
+-- hs.hotkey.bind(modHyper, 'k', function()
+--     if hs.window.focusedWindow() then
+--         hs.window.focusedWindow():focusWindowNorth()
+--     else
+--         hs.alert.show("No active window")
+--     end
+--  end)
+--
+-- hs.hotkey.bind(modHyper, 'j', function()
+--     if hs.window.focusedWindow() then
+--         hs.window.focusedWindow():focusWindowSouth()
+--     else
+--         hs.alert.show("No active window")
+--     end
+--  end)
+--
+-- hs.hotkey.bind(modHyper, 'l', function()
+--     if hs.window.focusedWindow() then
+--         hs.window.focusedWindow():focusWindowEast()
+--     else
+--         hs.alert.show("No active window")
+--     end
+-- end)
+--
+-- hs.hotkey.bind(modHyper, 'h', function()
+--     if hs.window.focusedWindow() then
+--         hs.window.focusedWindow():focusWindowWest()
+--     else
+--         hs.alert.show("No active window")
+--     end
+-- end)
 
 -- App Switcher (Hints)
-hs.hotkey.bind(modHyper, 'O', hs.hints.windowHints)
+hs.hotkey.bind(modHyper, 'O', function()
+    hs.hints.windowHints(nil, send_mouse_center, true)
+end)
