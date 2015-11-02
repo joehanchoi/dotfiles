@@ -197,9 +197,9 @@ modalBind(modNone, 'l', function() push(0.5,0,0.5,1); hs.hints.windowHints(nil, 
 -- Center Screen
 modalBind(modNone, 'c', function() push(0.1,0,0.8,1); hs.hints.windowHints(nil, send_mouse_center) end)
 modalBind(modNone, 'b', function() push(0.25,0.1,.5,.8); hs.hints.windowHints(nil, send_mouse_center) end)
-modalBind(modNone, '1', function() moveToMonitor(4); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
-modalBind(modNone, '2', function() moveToMonitor(1); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
-modalBind(modNone, '3', function() moveToMonitor(2); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
+modalBind(modNone, '1', function() moveToMonitor(4); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, '2', function() moveToMonitor(1); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, '3', function() moveToMonitor(2); hs.hints.windowHints(nil, send_mouse_center) end)
 
 -- Toggle Full Screen
 modalBind(modNone, 'F',  toggle_window_maximized)
