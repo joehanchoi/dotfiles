@@ -243,5 +243,5 @@ modalBind(modNone, 'F',  toggle_window_maximized)
 
 -- App Switcher (Hints)
 hs.hotkey.bind(modHyper, 'O', function()
-    hs.hints.windowHints(nil, send_mouse_center, true)
+    hs.hints.windowHints(nil, send_mouse_center)
 end)
