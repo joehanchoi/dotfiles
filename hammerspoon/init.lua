@@ -28,6 +28,8 @@ local modNone  = {}
 local mAlt     = {"⌥"}
 local modCmd   = {"⌘"}
 local modShift = {"⇧"}
+local modCtrl = {"^"}
+
 local modHyper = {"⌥", "⌃"}
 local modUltra = {"⌥", "⌃", "⇧"}
 
@@ -189,6 +191,7 @@ hs.hints.fontSize = 12
 -- ----------------------------------------------------------------------------
 -- Modal Keys
 -- ----------------------------------------------------------------------------
+-- Move & Resize Window
 modalBind(modNone, 'h', function() push(0,0,0.5,1); hs.hints.windowHints(nil, send_mouse_center) end)
 modalBind(modNone, 'j', function() push(0.5,0.5,0.5,0.5); hs.hints.windowHints(nil, send_mouse_center) end)
 modalBind(modNone, 'k', function() push(0.5,0,0.5,0.5); hs.hints.windowHints(nil, send_mouse_center) end)
@@ -208,40 +211,14 @@ modalBind(modNone, 'F',  toggle_window_maximized)
 -- Non-Modal Keys
 -- ----------------------------------------------------------------------------
 
--- Window Focus Directional Switch
--- hs.hotkey.bind(modHyper, 'k', function()
---     if hs.window.focusedWindow() then
---         hs.window.focusedWindow():focusWindowNorth()
---     else
---         hs.alert.show("No active window")
---     end
---  end)
---
--- hs.hotkey.bind(modHyper, 'j', function()
---     if hs.window.focusedWindow() then
---         hs.window.focusedWindow():focusWindowSouth()
---     else
---         hs.alert.show("No active window")
---     end
---  end)
---
--- hs.hotkey.bind(modHyper, 'l', function()
---     if hs.window.focusedWindow() then
---         hs.window.focusedWindow():focusWindowEast()
---     else
---         hs.alert.show("No active window")
---     end
--- end)
---
--- hs.hotkey.bind(modHyper, 'h', function()
---     if hs.window.focusedWindow() then
---         hs.window.focusedWindow():focusWindowWest()
---     else
---         hs.alert.show("No active window")
---     end
--- end)
-
 -- App Switcher (Hints)
 hs.hotkey.bind(modHyper, 'O', function()
     hs.hints.windowHints(nil, send_mouse_center)
 end)
+
+
+-- Move & Resize Window
+hs.hotkey.bind(modUltra, 'h', function() push(0,0,0.5,1); end)
+hs.hotkey.bind(modUltra, 'j', function() push(0.5,0.5,0.5,0.5); end)
+hs.hotkey.bind(modUltra, 'k', function() push(0.5,0,0.5,0.5); end)
+hs.hotkey.bind(modUltra, 'l', function() push(0.5,0,0.5,1); end)
