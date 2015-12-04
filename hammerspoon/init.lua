@@ -142,7 +142,7 @@ hs.hotkey.bind( modHyper, 'space', function()
         disableModal()
     else
         enableModal()
-        hs.hints.windowHints(nil, send_mouse_center)
+        hs.hints.windowHints(nil, sendMouseCenter)
     end
 end )
 
@@ -175,8 +175,20 @@ function toggle_window_maximized()
 end
 
 -- Send mouse to center of window
-function send_mouse_center()
+function sendMouseCenter()
     hs.eventtap.keyStroke({"ctrl", "alt"}, "n")
+end
+
+-- Move cursor and click
+-- pointTable is a table formatted as {x = xpos, y = ypos}
+function positionCursorClick(pointTable)
+    -- Move cursor and get its absolute position
+    hs.mouse.setRelativePosition(pointTable)
+    local absoluteMousePos = hs.mouse.getAbsolutePosition()
+
+    local types = hs.eventtap.event.types
+    hs.eventtap.event.newMouseEvent(types.leftMouseDown, absoluteMousePos):post()
+    hs.eventtap.event.newMouseEvent(types.leftMouseUp, absoluteMousePos):post()
 end
 
 -- Notification for changes
@@ -192,17 +204,19 @@ hs.hints.fontSize = 12
 -- Modal Keys
 -- ----------------------------------------------------------------------------
 -- Move & Resize Window
-modalBind(modNone, 'h', function() push(0,0,0.5,1); hs.hints.windowHints(nil, send_mouse_center) end)
-modalBind(modNone, 'j', function() push(0.5,0.5,0.5,0.5); hs.hints.windowHints(nil, send_mouse_center) end)
-modalBind(modNone, 'k', function() push(0.5,0,0.5,0.5); hs.hints.windowHints(nil, send_mouse_center) end)
-modalBind(modNone, 'l', function() push(0.5,0,0.5,1); hs.hints.windowHints(nil, send_mouse_center) end)
+modalBind(modNone, 'h', function() push(0,0,0.5,1); hs.hints.windowHints(nil, sendMouseCenter) end)
+modalBind(modNone, 'j', function() push(0.5,0.5,0.5,0.5); hs.hints.windowHints(nil, sendMouseCenter) end)
+modalBind(modNone, 'k', function() push(0.5,0,0.5,0.5); hs.hints.windowHints(nil, sendMouseCenter) end)
+modalBind(modNone, 'l', function() push(0.5,0,0.5,1); hs.hints.windowHints(nil, sendMouseCenter) end)
 
 -- Center Screen
-modalBind(modNone, 'c', function() push(0.1,0,0.8,1); hs.hints.windowHints(nil, send_mouse_center) end)
-modalBind(modNone, 'b', function() push(0.25,0.1,.5,.8); hs.hints.windowHints(nil, send_mouse_center) end)
-modalBind(modNone, '1', function() moveToMonitor(4); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
-modalBind(modNone, '2', function() moveToMonitor(1); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
-modalBind(modNone, '3', function() moveToMonitor(2); hs.hints.windowHints(nil, send_mouse_center) send_mouse_center() end)
+modalBind(modNone, 'c', function() push(0.1,0,0.8,1); hs.hints.windowHints(nil, sendMouseCenter) end)
+modalBind(modNone, 'b', function() push(0.25,0.1,.5,.8); hs.hints.windowHints(nil, sendMouseCenter) end)
+
+-- Move Active Window to Monitor
+modalBind(modNone, '1', function() moveToMonitor(4); hs.hints.windowHints(nil, sendMouseCenter) sendMouseCenter() end)
+modalBind(modNone, '2', function() moveToMonitor(1); hs.hints.windowHints(nil, sendMouseCenter) sendMouseCenter() end)
+modalBind(modNone, '3', function() moveToMonitor(2); hs.hints.windowHints(nil, sendMouseCenter) sendMouseCenter() end)
 
 -- Toggle Full Screen
 modalBind(modNone, 'F',  toggle_window_maximized)
@@ -210,12 +224,10 @@ modalBind(modNone, 'F',  toggle_window_maximized)
 -- ----------------------------------------------------------------------------
 -- Non-Modal Keys
 -- ----------------------------------------------------------------------------
-
 -- App Switcher (Hints)
 hs.hotkey.bind(modHyper, 'O', function()
-    hs.hints.windowHints(nil, send_mouse_center)
+    hs.hints.windowHints(nil, sendMouseCenter)
 end)
-
 
 -- Move & Resize Window
 hs.hotkey.bind(modUltra, 'h', function() push(0,0,0.5,1); end)
@@ -226,9 +238,49 @@ hs.hotkey.bind(modUltra, 'l', function() push(0.5,0,0.5,1); end)
 -- Center Screen
 hs.hotkey.bind(modUltra, 'c', function() push(0.1,0,0.8,1) end)
 hs.hotkey.bind(modUltra, 'b', function() push(0.25,0.1,.5,.8) end)
+
+-- Move Active Window to Monitor
 hs.hotkey.bind(modUltra, '1', function() moveToMonitor(4) end)
 hs.hotkey.bind(modUltra, '2', function() moveToMonitor(1) end)
 hs.hotkey.bind(modUltra, '3', function() moveToMonitor(2) end)
 
 -- Toggle Full Screen
 modalBind(modNone, 'F',  toggle_window_maximized)
+
+-- Moving cursor around active monitor
+-- Left Center
+hs.hotkey.bind(modHyper, 'h', function()
+    local monitorXRes = hs.mouse.getCurrentScreen():frame().w
+    local monitorYRes = hs.mouse.getCurrentScreen():frame().h
+
+    local xPos = monitorXRes / 4
+    local yPos = monitorYRes / 2
+    positionCursorClick({x=xPos, y=yPos})
+end)
+-- Right Upper
+hs.hotkey.bind(modHyper, 'k', function()
+    local monitorXRes = hs.mouse.getCurrentScreen():frame().w
+    local monitorYRes = hs.mouse.getCurrentScreen():frame().h
+
+    local xPos = monitorXRes - monitorXRes / 4
+    local yPos = monitorYRes / 3
+    positionCursorClick({x=xPos, y=yPos})
+end)
+
+hs.hotkey.bind(modHyper, 'l', function()
+    local monitorXRes = hs.mouse.getCurrentScreen():frame().w
+    local monitorYRes = hs.mouse.getCurrentScreen():frame().h
+
+    local xPos = monitorXRes - monitorXRes / 4
+    local yPos = monitorYRes / 3
+    positionCursorClick({x=xPos, y=yPos})
+end)
+-- Right Lower
+hs.hotkey.bind(modHyper, 'j', function()
+    local monitorXRes = hs.mouse.getCurrentScreen():frame().w
+    local monitorYRes = hs.mouse.getCurrentScreen():frame().h
+
+    local xPos = monitorXRes - monitorXRes / 4
+    local yPos = monitorYRes - monitorYRes / 3
+    positionCursorClick({x=xPos, y=yPos})
+end)
