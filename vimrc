@@ -178,6 +178,8 @@ endif
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
+" Disable runtime snippets (use custom snippets only)
+let g:neosnippet#disable_runtime_snippets = {'_' : 1,}
 
 "--- INDENT-LINE -------------------------------------------------------------
 let g:indentLine_color_term = 236
