@@ -197,8 +197,8 @@ hs.notify.new( {title='Hammerspoon', subTitle='Configuration loaded'} ):send()
 -- Hinting Setup
 hs.hints.hintChars = {"Y", "U", "I", "O", "P", ";", "N", "M", "/",
                       "6", "7", "8", "9", "0"}
-hs.hints.showTitleThresh = 99
-hs.hints.fontSize = 12
+hs.hints.showTitleThresh = 0
+hs.hints.fontSize = 0
 
 -- ----------------------------------------------------------------------------
 -- Modal Keys
