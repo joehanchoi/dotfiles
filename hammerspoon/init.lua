@@ -230,10 +230,10 @@ hs.hotkey.bind(modHyper, 'O', function()
 end)
 
 -- Move & Resize Window
-hs.hotkey.bind(modUltra, 'h', function() push(0,0,0.5,1); end)
-hs.hotkey.bind(modUltra, 'j', function() push(0.5,0.5,0.5,0.5); end)
-hs.hotkey.bind(modUltra, 'k', function() push(0.5,0,0.5,0.5); end)
-hs.hotkey.bind(modUltra, 'l', function() push(0.5,0,0.5,1); end)
+hs.hotkey.bind(modUltra, 'h', function() push(0,0,0.5,1); hs.hints.windowHints(nil, sendMouseCenter) end)
+hs.hotkey.bind(modUltra, 'j', function() push(0.5,0.5,0.5,0.5); hs.hints.windowHints(nil, sendMouseCenter) end)
+hs.hotkey.bind(modUltra, 'k', function() push(0.5,0,0.5,0.5); hs.hints.windowHints(nil, sendMouseCenter) end)
+hs.hotkey.bind(modUltra, 'l', function() push(0.5,0,0.5,1); hs.hints.windowHints(nil, sendMouseCenter) end)
 
 -- Center Screen
 hs.hotkey.bind(modUltra, 'c', function() push(0.1,0,0.8,1) end)
