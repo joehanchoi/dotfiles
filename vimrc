@@ -217,7 +217,7 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 " Enable mouse anywhere
-set mouse=a
+" set mouse=a
 " Enable Vim to use OSX clipboard
 set clipboard=unnamed
 " Timeout fix for inserting new line above with 'O' - for tmux
