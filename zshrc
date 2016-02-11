@@ -49,7 +49,7 @@ plugins=(git tmux zsh-syntax-highlighting autojump virtualenv)
 
 # User configuration
 
-export PATH=":/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH=":/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/joechoi/Library/Haskell/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
