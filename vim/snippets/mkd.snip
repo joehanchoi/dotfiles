@@ -42,3 +42,13 @@ alias footnote
 options word
     [^${1}]
     [^$1]:
+
+snippet wikiheader
+abbr wiki header
+options head
+    ---
+    format: ${1:#:override page format}
+    categories: ${2:#:page categories}
+    toc: ${3:#:no to disable toc}
+    title: ${4:#:overriding title}
+    ...
