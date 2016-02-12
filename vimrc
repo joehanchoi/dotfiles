@@ -8,37 +8,37 @@ call plug#begin('~/.vim/plugged') " Use Vim-Plug
 "-----------------------------------------------------------------------------
 " PLUGINS
 "-----------------------------------------------------------------------------
-Plug 'tpope/vim-sensible'             " Sensible defaults
-Plug 'tomtom/tcomment_vim'            " Makes commenting easy
-Plug 'vim-scripts/Solarized'          " Solarized color scheme
-Plug 'godlygeek/tabular'              " Automatic indent completion
-" Plug 'plasticboy/vim-markdown'        " Vim markdown syntax highlighting
-Plug 'kien/ctrlp.vim'                 " Fuzzy path finder
-Plug 'joehanchoi/nerdtree'            " Folder management
-Plug 'bling/vim-airline'              " Airline status bar
-Plug 'terryma/vim-multiple-cursors'   " Multiple cursors
-Plug 'myusuf3/numbers.vim'            " Adds smart number lines
-Plug 'gregsexton/MatchTag'            " Match tags with highlighting
-Plug 'Shougo/neocomplete.vim'         " Autocompletion
-Plug 'sjl/gundo.vim'                  " Undo tree pane
-Plug 'tpope/vim-vinegar'              " Avoid project drawer plugin
-Plug 'tpope/vim-repeat'               " Enable repeating plugin maps with .
-Plug 'svermeulen/vim-easyclip'        " Simplified clipboard functionality
-Plug 'christoomey/vim-tmux-navigator' " Vim and tmux seamless navigation
-Plug 'scrooloose/syntastic'           " Syntax checker
-Plug 'majutsushi/tagbar'              " Tag navigation
-Plug 'rking/ag.vim'                   " Keyword searcher
-Plug 'tpope/vim-unimpaired'           " Paired mapping
-Plug 'tpope/vim-surround'             " Mappings to change surroundings
-Plug 'justinmk/vim-sneak'             " Fast text movement
-Plug 'joehanchoi/vim-jinja'              " Jinja syntax highlighting
-Plug 'Yggdroot/indentLine'
-Plug 'Shougo/neosnippet.vim'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'Raimondi/delimitMate'
-Plug 'hdima/python-syntax'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'joehanchoi/vim-markdown'
+Plug 'tpope/vim-sensible'               " Sensible defaults
+Plug 'tomtom/tcomment_vim'              " Makes commenting easy
+Plug 'vim-scripts/Solarized'            " Solarized color scheme
+Plug 'godlygeek/tabular'                " Automatic indent completion
+Plug 'kien/ctrlp.vim'                   " Fuzzy path finder
+Plug 'joehanchoi/nerdtree'              " Folder management
+Plug 'bling/vim-airline'                " Airline status bar
+Plug 'terryma/vim-multiple-cursors'     " Multiple cursors
+Plug 'myusuf3/numbers.vim'              " Adds smart number lines
+Plug 'gregsexton/MatchTag'              " Match tags with highlighting
+Plug 'Shougo/neocomplete.vim'           " Autocompletion
+Plug 'sjl/gundo.vim'                    " Undo tree pane
+Plug 'tpope/vim-vinegar'                " Avoid project drawer plugin
+Plug 'tpope/vim-repeat'                 " Enable repeating plugin maps with .
+Plug 'svermeulen/vim-easyclip'          " Simplified clipboard functionality
+Plug 'christoomey/vim-tmux-navigator'   " Vim and tmux seamless navigation
+Plug 'scrooloose/syntastic'             " Syntax checker
+Plug 'majutsushi/tagbar'                " Tag navigation
+Plug 'rking/ag.vim'                     " Keyword searcher
+Plug 'tpope/vim-unimpaired'             " Paired mapping
+Plug 'tpope/vim-surround'               " Mappings to change surroundings
+Plug 'justinmk/vim-sneak'               " Fast text movement
+Plug 'joehanchoi/vim-jinja'             " Jinja syntax highlighting
+Plug 'Yggdroot/indentLine'              " Show indentation visually
+Plug 'Shougo/neosnippet.vim'            " Code snippets
+Plug 'hynek/vim-python-pep8-indent'     " Correct indentation for Python
+Plug 'Raimondi/delimitMate'             " Automatic closing of brackets
+Plug 'hdima/python-syntax'              " Enhanced Python syntax highlighting
+Plug 'mustache/vim-mustache-handlebars' " Mustache/Handlebars syntax highlighting
+Plug 'joehanchoi/vim-markdown'          " Markdown syntax highlighting
+Plug 'tpope/vim-fugitive'               " Git commands
 
 call plug#end()
 
