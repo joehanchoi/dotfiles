@@ -192,6 +192,8 @@ let python_highlight_all = 1
 
 "--- FUGITIVE ----------------------------------------------------------------
 nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit -m ""<Left>
+nnoremap <Leader>gaa :Git add -A<CR><CR>
 
 "-----------------------------------------------------------------------------
 " USER INTERFACE
