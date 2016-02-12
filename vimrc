@@ -190,6 +190,9 @@ let python_highlight_indent_errors = 0
 let python_print_as_function = 0
 let python_highlight_all = 1
 
+"--- FUGITIVE ----------------------------------------------------------------
+nnoremap <Leader>gs :Gstatus<CR>
+
 "-----------------------------------------------------------------------------
 " USER INTERFACE
 "-----------------------------------------------------------------------------
