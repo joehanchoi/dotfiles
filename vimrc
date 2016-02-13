@@ -39,6 +39,7 @@ Plug 'hdima/python-syntax'              " Enhanced Python syntax highlighting
 Plug 'mustache/vim-mustache-handlebars' " Mustache/Handlebars syntax highlighting
 Plug 'joehanchoi/vim-markdown'          " Markdown syntax highlighting
 Plug 'tpope/vim-fugitive'               " Git commands
+Plug 'henrik/vim-qargs'                 " Quickfix to Arglist commands
 
 call plug#end()
 
