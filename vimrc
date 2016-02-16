@@ -197,8 +197,12 @@ let g:vim_markdown_no_default_key_mappings = 1
 
 "--- FUGITIVE ----------------------------------------------------------------
 nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit -m ""<Left>
+nnoremap <Leader>gcm :Gcommit -m ""<Left>
 nnoremap <Leader>gaa :Git add -A<CR><CR>
+" Amend to last commit
+nnoremap <Leader>gca :Git commit --amend --no-edit<CR><CR>
+" Open git diff view
+nnoremap <Leader>gd :Gvdiff<CR>
 
 "-----------------------------------------------------------------------------
 " USER INTERFACE
