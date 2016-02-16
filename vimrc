@@ -192,6 +192,9 @@ let python_highlight_indent_errors = 0
 let python_print_as_function = 0
 let python_highlight_all = 1
 
+"--- MARKDOWN -SYNTAX ---------------------------------------------------------
+let g:vim_markdown_no_default_key_mappings = 1
+
 "--- FUGITIVE ----------------------------------------------------------------
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit -m ""<Left>
