@@ -201,6 +201,7 @@ nnoremap <Leader>gcm :Gcommit -m ""<Left>
 nnoremap <Leader>gaa :Git add -A<CR><CR>
 " Amend to last commit
 nnoremap <Leader>gca :Git commit --amend --no-edit<CR><CR>
+nnoremap <Leader>gd :Gvdiff<CR>
 
 "-----------------------------------------------------------------------------
 " USER INTERFACE
