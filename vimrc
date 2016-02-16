@@ -40,6 +40,7 @@ Plug 'mustache/vim-mustache-handlebars' " Mustache/Handlebars syntax highlightin
 Plug 'joehanchoi/vim-markdown'          " Markdown syntax highlighting
 Plug 'tpope/vim-fugitive'               " Git commands
 Plug 'henrik/vim-qargs'                 " Quickfix to Arglist commands
+Plug 'airblade/vim-gitgutter'           " Show git diffs in gutter
 
 call plug#end()
 
