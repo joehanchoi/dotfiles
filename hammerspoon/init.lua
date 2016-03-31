@@ -241,7 +241,7 @@ hs.hotkey.bind(modUltra, 'c', function() push(0.1,0,0.8,1) end)
 hs.hotkey.bind(modUltra, 'b', function() push(0.25,0.1,.5,.8) end)
 
 -- Move Active Window to Monitor
-hs.hotkey.bind(modUltra, '1', function() moveToMonitor(4) end)
+hs.hotkey.bind(modUltra, '1', function() moveToMonitor(3) end)
 hs.hotkey.bind(modUltra, '2', function() moveToMonitor(1) end)
 hs.hotkey.bind(modUltra, '3', function() moveToMonitor(2) end)
 
