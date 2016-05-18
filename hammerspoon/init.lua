@@ -149,6 +149,13 @@ end )
 modalBind( modNone, 'escape', function() disableModal() end )
 modalBind( modNone, 'return', function() disableModal() end )
 
+
+-- Move Active Window
+function moveWindow(x, y, w, h)
+    push(x, y, w, h);
+    hs.hints.windowHints(nil, sendMouseCenter)
+end
+
 -- Cycle args for the function when called repeatedly:
 -- cycleCalls( fn, { {args1...}, ... } )
 function cycleCalls( fn, args )
@@ -230,10 +237,12 @@ hs.hotkey.bind(modHyper, 'O', function()
 end)
 
 -- Move & Resize Window
-hs.hotkey.bind(modUltra, 'h', function() push(0,0,0.5,1); hs.hints.windowHints(nil, sendMouseCenter) end)
+hs.hotkey.bind(modUltra, 'h', function() moveWindow(0,0,0.5,1) end)
 hs.hotkey.bind(modUltra, 'j', function() push(0.5,0.5,0.5,0.5); hs.hints.windowHints(nil, sendMouseCenter) end)
 hs.hotkey.bind(modUltra, 'k', function() push(0.5,0,0.5,0.5); hs.hints.windowHints(nil, sendMouseCenter) end)
 hs.hotkey.bind(modUltra, 'l', function() push(0.5,0,0.5,1); hs.hints.windowHints(nil, sendMouseCenter) end)
+hs.hotkey.bind(modUltra, '6', function() moveWindow(0,0,0.7,1) end)
+hs.hotkey.bind(modUltra, '9', function() moveWindow(.7,0,0.3,1) end)
 hs.hotkey.bind(modUltra, 'f', function() toggle_window_maximized() end)
 
 -- Center Screen
@@ -241,7 +250,7 @@ hs.hotkey.bind(modUltra, 'c', function() push(0.1,0,0.8,1) end)
 hs.hotkey.bind(modUltra, 'b', function() push(0.25,0.1,.5,.8) end)
 
 -- Move Active Window to Monitor
-hs.hotkey.bind(modUltra, '1', function() moveToMonitor(3) end)
+hs.hotkey.bind(modUltra, '1', function() moveToMonitor(4) end)
 hs.hotkey.bind(modUltra, '2', function() moveToMonitor(1) end)
 hs.hotkey.bind(modUltra, '3', function() moveToMonitor(2) end)
 
