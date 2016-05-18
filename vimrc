@@ -41,6 +41,7 @@ Plug 'joehanchoi/vim-markdown'          " Markdown syntax highlighting
 Plug 'tpope/vim-fugitive'               " Git commands
 Plug 'henrik/vim-qargs'                 " Quickfix to Arglist commands
 Plug 'airblade/vim-gitgutter'           " Show git diffs in gutter
+Plug 'ludovicchabant/vim-gutentags'     " Automated tag generation
 
 call plug#end()
 
@@ -202,6 +203,9 @@ nnoremap <Leader>gaa :Git add -A<CR><CR>
 " Amend to last commit
 nnoremap <Leader>gca :Git commit --amend --no-edit<CR><CR>
 nnoremap <Leader>gd :Gvdiff<CR>
+
+"--- GUTENTAGS-----------------------------------------------------------------
+let g:gutentags_tagfile = ".tags"
 
 "-----------------------------------------------------------------------------
 " USER INTERFACE
