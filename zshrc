@@ -45,7 +45,7 @@ ZSH_THEME="custom-theme"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux zsh-syntax-highlighting autojump virtualenv)
+plugins=(git tmux zsh-syntax-highlighting autojump virtualenv pyenv)
 
 # User configuration
 
@@ -55,7 +55,8 @@ export PATH=":/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/U
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Don't beep on error
 setopt no_beep
@@ -84,9 +85,9 @@ setopt no_beep
 #
 
 # --- VIRTUALENV WRAPPER ---
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # --- ALIASES ---
 alias tmuxb="tmux attach -t base || tmux new -s base"
