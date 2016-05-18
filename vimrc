@@ -185,6 +185,7 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 let g:neosnippet#disable_runtime_snippets = {'_' : 1,}
 
 "--- INDENT-LINE -------------------------------------------------------------
+" Color for indent marker
 let g:indentLine_color_term = 236
 
 "--- PYTHON-SYNTAX -----------------------------------------------------------
@@ -197,6 +198,7 @@ let python_highlight_all = 1
 let g:vim_markdown_no_default_key_mappings = 1
 
 "--- FUGITIVE ----------------------------------------------------------------
+" Leader aliases for git
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gcm :Gcommit -m ""<Left>
 nnoremap <Leader>gaa :Git add -A<CR><CR>
@@ -205,9 +207,11 @@ nnoremap <Leader>gca :Git commit --amend --no-edit<CR><CR>
 nnoremap <Leader>gd :Gvdiff<CR>
 
 "--- GUTENTAGS ---------------------------------------------------------------
+" Change default tag file name
 let g:gutentags_tagfile = ".tags"
 
 "--- SURROUND ----------------------------------------------------------------
+" Shortcut for bolding text
 let b:surround_{char2nr('b')} = "**\r**"
 
 "-----------------------------------------------------------------------------
