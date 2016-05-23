@@ -28,3 +28,6 @@ Temporary Items
 # Temp Vim Files
 *.swp
 *.swo
+
+# Vim Plugins
+vim/plugged
