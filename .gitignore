@@ -29,5 +29,8 @@ Temporary Items
 *.swp
 *.swo
 
+# Vim Spelling files
+vim/spell
+
 # Vim Plugins
 vim/plugged
