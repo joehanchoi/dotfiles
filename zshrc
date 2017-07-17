@@ -45,7 +45,7 @@ ZSH_THEME="custom-theme"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux zsh-syntax-highlighting autojump virtualenv pyenv)
+plugins=(git tmux zsh-syntax-highlighting autojump pyenv)
 
 # User configuration
 
