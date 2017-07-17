@@ -42,6 +42,7 @@ Plug 'tpope/vim-fugitive'               " Git commands
 Plug 'henrik/vim-qargs'                 " Quickfix to Arglist commands
 Plug 'airblade/vim-gitgutter'           " Show git diffs in gutter
 Plug 'ludovicchabant/vim-gutentags'     " Automated tag generation
+Plug 'vim-airline/vim-airline-themes'   " Airline themes
 
 call plug#end()
 
